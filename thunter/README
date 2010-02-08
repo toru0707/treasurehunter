@@ -1,0 +1,2 @@
+﻿usage:
+$python text2words.py text.txt | words2pair.py | pair2xml.py > result.xml
