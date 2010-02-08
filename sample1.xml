@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<graph title="Simple Graph Demo" bgcolor="ffffff" linecolor="cccccc" viewmode="display" width="725" height="400">
+<node id="0" text="ニワトリ" scale="3" color="cccccc" textcolor="000000"/>
+<node id="1" text="庭" scale="3" color="cccccc" textcolor="000000"/>
+<node id="2" text="二" scale="1" color="cccccc" textcolor="000000"/>
+<node id="3" text="焼き鳥" scale="1" color="cccccc" textcolor="000000"/>
+<node id="4" text="休暇" scale="3" color="cccccc" textcolor="000000"/>
+<node id="5" text="今日" scale="3" color="cccccc" textcolor="000000"/>
+<edge sourceNode="5" targetNode="4" label="" textcolor="555555"/>
+<edge sourceNode="0" targetNode="4" label="" textcolor="555555"/>
+<edge sourceNode="0" targetNode="1" label="" textcolor="555555"/>
+<edge sourceNode="4" targetNode="1" label="" textcolor="555555"/>
