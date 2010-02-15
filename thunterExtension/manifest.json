@@ -1,0 +1,17 @@
+{
+  "name": "relation popup",
+  "version": "0.1",
+   "background_page": "background.html",
+   "icons": {
+      "128": "img/icon.png"
+   },
+   "content_scripts": [
+    {
+      "css": ["relative.css"],
+      "js": [ "jquery-1.4.1.js", "relative_popup_controller.js" , "relative_popup_view.js"],
+      "run_at": "document_end",
+      "matches": [ "http://*/*" ]
+    }
+  ],
+   "permissions": [ "tabs", "http://*/*", "https://*/*" ]
+}

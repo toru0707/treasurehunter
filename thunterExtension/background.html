@@ -1,0 +1,20 @@
+﻿<html>
+<head>
+<script type="text/javascript" src="jquery-1.4.1.js"></script>
+<script>
+chrome.self.onConnect.addListener(function(port, name) {
+    port.onMessage.addListener(function(info, con) {
+		console.log('background onMessage is called.');
+        $.ajax({
+		  url: "http://127.0.0.1/",
+		  cache: false,
+		  success: function(html){
+		    con.postMessage(html);
+		  }
+		});
+    });
+});
+ </script>
+ </head>
+ <body></body>
+ </html>

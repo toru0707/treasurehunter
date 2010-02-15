@@ -43,7 +43,8 @@ def main():
                
 
     #単語出現回数、共起単語出現回数からシンプソン係数を計算 
-	simp = {}
+    simp = {}
+    simpwords = []
     for key, value in freqpair.iteritems():
         if freqpair[key] == 1: 
             continue
@@ -55,14 +56,18 @@ def main():
             simpthon = float(value) / float(freqwords[m.group(1)])
         else:
             simpthon = float(value) / float(freqwords[m.group(2)])
-        if simpthon < 0.1:
+        if simpthon < 0.6:
             continue
+        m = p.search(key)
+        simpwords.append(m.group(1))
+        simpwords.append(m.group(2))
         simp[key] = simpthon
-        
         
     print "%s" % max
     for key, value in freqwords.iteritems():
-        print "%s\t%s" % (key, value)
+        if key in simpwords:
+            print "%s\t%s" % (key, value)
+        
     for key, value in simp.iteritems():
         print "%s\t%s" % (key, value)
 

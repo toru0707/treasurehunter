@@ -32,7 +32,7 @@ def main():
 		m1 = p1.search(line)
 		if m1 != None:
 			#ノード要素が見つかった
-			print "<node id=\"%s\" text=\"%s\" scale=\"%s\" color=\"cccccc\" textcolor=\"000000\"/>" % (id,m1.group(1), float(m1.group(2)) * 100 / float(max))
+			print "<node id=\"%s\" text=\"%s\" scale=\"%s\" color=\"cccccc\" textcolor=\"000000\"/>" % (id,m1.group(1), float(m1.group(2)) * 200 / float(max))
 			idMap[m1.group(1)] = id
 		
 		else :
