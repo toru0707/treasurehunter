@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Graph Gear - Graph XML Files</title>
+
+<link rel="stylesheet" type="text/css" href="../examples/example-style.css" />
+
+
+</head>
+
+<body>
+<div id="wrap">
+	<h1>Graph Gear Javascript API <span>Vague Specification.</span></h1>
+	
+<p>You can interact with a graphgear object over javascript in a nuber of interesting ways. These functions are listed in (and can be included from) source/graphgear.js</p>
+
+<p>Setting Properties over javascript:</p>
+
+You can set most of the basic graph properties over javascript, a function like:
+<div style="background:#eee;">
+<code><pre>
+	function setPropertyToValue(value) {
+		 flashMovie = document.getElementById("graphgear");
+		 flashMovie.changeProperty("propertyname", value);
+	}
+</pre></code>
+</div>
+Will set the value of propertyname to the passed value for the graphgear object with id="graphgear", the list of these properties is below:
+<div style="background:#eee;">
+<ul>idealSegmentLength, DeltaLimit, BOUNCE, SPRINGK, REPELK, RESISTANCE, MASS, GRAVITY, STOPVEL, STOPACC, STOPRENDER</ul>
+</div>
+
+You can also receive updates of node interaction (click interaction) in javascript with the function nodeNotify, for example:
+<div style="background:#eee;">
+<code><pre>
+	function nodeNotify(nodeIdString) {
+		if(nodeIdString == "n1") {
+			document.getElementById("infospace").innerHTML = "somehtml";
+		}
+	}
+</pre></code>
+</div>
+<p>As you can see, nodeNotify is a callback function that receives the node ID as its value. Here we check to see if this nodeIdString is equal to a certain id (n1), and if it is than we set the innerHTML value of some element "infospace" to "somehtml". The exact function you create can be fairly flexible, but it needs to be named nodeNotify and take a string as a parameter. </p>
+
+<p>We also have two javascript functions that deal with changing the xml value, either by passing a reference to a new value or reading some dynamic field (like a textarea) for it's contents:</p>
+<div style="background:#eee;">
+<code><pre>
+	function jsSwitchXML(urlString) {
+		flashMovie = document.getElementById("graphgear");
+		flashMovie.switchXML(urlString);
+	}
+</pre></code>
+</div>
+
+<div style="background:#eee;">
+<code><pre>
+	function jsLiveXML(newXMLString) {
+		flashMovie = document.getElementById("graphgear");
+		flashMovie.liveXML(newXMLString);
+	}
+</pre></code>
+</div>
+<p>The important bit is that jsLiveXML takes a string representation of some xml, and jsSwitchXML takes a urlString representing the location of an xml file.</p>
+
+<p>You can also add nodes over javascript (but not remove them - yet).</p>
+<div style="background:#eee;">
+<code><pre>
+	function addNode(jId,jNodeType,jNodeCluster,jNodeText,jLinkValue,jImageValue,
+			 jScaleValue,jTextColor,jBackgroundColor,jEdgeId,jTarget,jLabel,jLabelColor) {
+		flashMovie = document.getElementById("graphgear");
+		flashMovie.jsAddNode(jId,jNodeType,jNodeCluster,jNodeText,jLinkValue,jImageValue,
+				     jScaleValue,jTextColor,jBackgroundColor,jEdgeId,jTarget,jLabel,jLabelColor);
+	}
+</pre></code>
+</div>
+<p>Where there properties are the id, the type of node, the cluster, the node text, the link url, the image url, the scale value, the text color, the background color, the edge id, the target node (to connect this new node to), the edge label and the edge label color (see the graphxmlfile for more information)</p>
+
+<p>That's it for now.
+
+</div>
+</body>
+</html>

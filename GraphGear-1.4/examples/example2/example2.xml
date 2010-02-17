@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<graph title="Some Collaboratives" bgcolor="ffffff" linecolor="cccccc" viewmode="display" width="725" height="400">
+     <node id="n1" text="The Collaborative" image="example2/co.png" link="http://www.creativesynthesis.net" scale="200" color="ff0000" textcolor="ffffff"/>
+     <node id="n2" text="Matthew Hockenberry" image="example2/matthewhockenberry.jpg" link="http://www.creativesynthesis.net/zeitgeist/1/" scale="140" color="cccccc" textcolor="000000"/>
+     <node id="n3" text="Leonardo Bonanni" image="example2/leonardobonanni.png" link="http://www.creativesynthesis.net/zeitgeist/2/" scale="140" color="cccccc" textcolor="000000"/>
+     <node id="n4" text="Ernesto Arroyo" image="example2/ernestoarroyo.jpg" link="http://www.creativesynthesis.net/zeitgeist/4/" scale="140" color="cccccc" textcolor="000000"/>
+     <node id="n5" text="Connor Dickie" image="example2/connordickie.jpg" link="http://www.creativesynthesis.net/zeitgeist/3/" scale="140" color="cccccc" textcolor="000000"/>
+     <node id="n6" text="Shae Davidson" image="example2/shaedavidson.jpg" link="http://www.creativesynthesis.net/zeitgeist/5/" scale="140" color="cccccc" textcolor="000000"/>
+
+     <edge sourceNode="n1" targetNode="n2" label="" textcolor="555555"/>
+     <edge sourceNode="n1" targetNode="n3" label="" textcolor="555555"/>
+     <edge sourceNode="n1" targetNode="n4" label="" textcolor="555555"/>
+     <edge sourceNode="n1" targetNode="n5" label="" textcolor="555555"/>
+     <edge sourceNode="n1" targetNode="n6" label="" textcolor="555555"/>
+</graph>

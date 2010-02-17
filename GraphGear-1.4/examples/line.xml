@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<graph title="Simple Graph Demo" bgcolor="ffffff" linecolor="cccccc" viewmode="display" width="725" height="100" type="undirected" lock="x">
+     <node nodetype="CircleNode" id="n1" text="" image="../examples/example1/co.png"  color="0000ff" textcolor="0000ff"/>
+     <node nodetype="CircleNode" id="n2" text="" image="../examples/example1/co.png" color="cccccc" textcolor="000000"/>
+     <node nodetype="CircleNode" id="n3" text=""  color="0000ff" textcolor="000000"/>
+     <node nodetype="CircleNode" id="n4" text="" image="../examples/example1/co.png" color="cccccc" textcolor="000000"/>
+     <node nodetype="CircleNode" id="n5" text="" image="../examples/example1/co.png" color="cccccc" textcolor="000000"/>
+     <node nodetype="CircleNode" id="n6" text="" image="../examples/example1/co.png" color="cccccc" textcolor="000000"/>
+     <node nodetype="CircleNode" id="n7" text="" image="../examples/example1/co.png" color="0000ff" textcolor="000000"/>
+
+ 
+     <edge sourceNode="n2" targetNode="n3" label="" textcolor="555555"/>
+     <edge sourceNode="n3" targetNode="n2" label="" textcolor="555555"/>
+
+     <edge sourceNode="n3" targetNode="n4" label="" textcolor="555555"/>
+     <edge sourceNode="n4" targetNode="n3" label="" textcolor="555555"/>
+
+    <edge sourceNode="n1" targetNode="n4" label="" textcolor="555555"/>
+     <edge sourceNode="n4" targetNode="n1" label="" textcolor="555555"/>
+    <edge sourceNode="n1" targetNode="n5" label="" textcolor="555555"/>
+     <edge sourceNode="n5" targetNode="n1" label="" textcolor="555555"/>
+
+
+     <edge sourceNode="n5" targetNode="n6" label="" textcolor="555555"/>
+     <edge sourceNode="n6" targetNode="n5" label="" textcolor="555555"/>
+
+     <edge sourceNode="n6" targetNode="n7" label="" textcolor="555555"/>
+     <edge sourceNode="n7" targetNode="n6" label="" textcolor="555555"/>
+
+
+   
+</graph>

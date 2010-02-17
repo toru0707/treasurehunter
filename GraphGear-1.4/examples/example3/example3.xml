@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<graph title="The Smallest Interesting Graph" bgcolor="ffffff" width="725" height="400">
+    <node id="n1" text="One Node"/>
+    <node id="n2" text="Two Node" />
+
+    <edge sourceNode="n1" targetNode="n2" label="connect"/>
+</graph>

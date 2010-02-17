@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<graph title="Gooey Graph Demo" bgcolor="ffffff" linecolor="cccccc" viewmode="display" width="725" height="400" segmentlength="75" mass="20" gravity="50" bounce="20" springforce="10" repelforce="10" resistance="10">
+     <node id="n1" scale="120" color="000000" textcolor="0000ff"/>
+     <node id="n2"  color="0ffff0" textcolor="000000"/>
+     <node id="n3"  scale="140" color="0000ff" textcolor="000000"/>
+     <node id="n4"  color="ffff00" textcolor="000000"/>
+     <node id="n5"  color="00ffff" textcolor="000000"/>
+     <node id="n6"   color="ff0000" textcolor="000000"/>
+     <node id="n7"   color="00ff00" textcolor="000000"/>
+
+     <edge sourceNode="n1" targetNode="n2" label="" textcolor="555555"/>
+     <edge sourceNode="n1" targetNode="n3" label="" textcolor="555555"/>
+     <edge sourceNode="n1" targetNode="n4" label="" textcolor="555555"/>
+     <edge sourceNode="n1" targetNode="n5" label="" textcolor="555555"/>
+     <edge sourceNode="n2" targetNode="n6" label="" textcolor="555555"/>
+     <edge sourceNode="n2" targetNode="n7" label="" textcolor="555555"/>
+</graph>

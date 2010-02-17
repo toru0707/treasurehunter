@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Graph Gear Demo</title>
+<!-- SWFObject embed by Geoff Stearns geoff@deconcept.com http://blog.deconcept.com/swfobject/ -->
+<script type="text/javascript" src="swfobject/swfobject.js"></script>
+<link rel="stylesheet" type="text/css" href="examples/example-style.css" />
+
+<script language="JavaScript">
+	var flashMovie;
+	function init() {
+		if (document.getElementById) {
+		   flashMovie = document.getElementById("gearspace");
+		}
+	}
+	window.onload = init;
+
+	function jsSwitchXML() {
+		var xml = document.xmlChooser.xmlChoice.value;
+		flashMovie.switchXML(xml);
+	}
+	
+	function jsLiveXML() {
+		var xml = document.liveXml.liveXmlArea.value;
+		flashMovie.liveXML(xml);
+	}
+	function nodeNotify(str) {
+		document.getElementById("nodify").innerHTML = "<strong>Javascript Events:</strong> Selected Node: " + str;
+	}
+	function addNode(idN, scaleN, contentN, linkN, textcolorN, imageN, colorN, targetN, labelN, labelColorN) {
+		flashMovie.jsAddNode(idN, scaleN, contentN, linkN, textcolorN, imageN, colorN, targetN, labelN, labelColorN);
+	}
+	function addRandomNode() {
+		flashMovie.addRandomNode();
+	}
+</script>
+</head>
+
+<body>
+	<div id="wrap">
+		<div id="gearspace">
+			<strong>You need to upgrade your Flash Player</strong>
+		</div>
+		<script type="text/javascript">
+			// <![CDATA[
+			var flashvars = {
+				graphXMLFile: "example1/example1.txt"
+			};
+			var params = {
+			  allowscriptaccess: "always",
+				scale: "noborder",
+				salign: "tl",
+				base:"examples"
+			};
+			var attributes = null; 		
+
+			swfobject.embedSWF("GraphGear.swf", "gearspace", "725", "400", "9.0.0", flashvars, params, attributes);
+
+		
+			// ]]>
+		</script>
+</div>
+</body>
+</html>

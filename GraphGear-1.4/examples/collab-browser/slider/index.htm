@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>phatfusion : slider</title>
+
+<link rel="stylesheet" href="../_common/css/main.css" type="text/css" media="all">
+
+<link href="slider.css" rel="stylesheet" type="text/css" />
+
+<script type="text/javascript" src="../_common/js/mootools.js"></script>
+<script type="text/javascript" src="slider.js"></script>
+
+
+
+</head>
+<body>
+
+	<div id="container">
+	
+		<div id="logo"><h1>phatfusion</h1></div>
+		<div class="nav"><a href="../index.htm">home</a></div>
+		<p class="desc">javascript and flash development.</p>
+		
+		
+		<h2 class="slider">slider</h2>
+		<p class="version">version 1.0</p>
+		<p class="description">bar and slider.</p>
+		
+		
+		<h3 class="example">example</h3>
+		<div id="example">
+			<div id="slideContainer1"><div id="slideHandle1"></div></div>
+		  <div id="pos1"></div>
+		  <div id="slideContainer2"><div id="slideHandle2"></div></div>
+		  <div id="pos2"></div>
+		
+		<script type="text/javascript">
+			
+			window.addEvent('domready', function(){
+				var slider1 = new Slider('slideContainer1', 'slideHandle1',{onComplete: function(val){$('pos1').setHTML(val);}});
+		var slider2 = new Slider('slideContainer2', 'slideHandle2', {
+			onTick: function(pos){
+				this.knob.effect(this.p, {duration: 200, transition: Fx.Transitions.quadOut}).start(pos);
+			},
+			onComplete: function(val){
+				$('pos2').setHTML(val);
+			},
+			steps: 25
+		});
+			});
+		</script>
+		</div>
+		
+		<h3 class="features">features</h3>
+		<div id="features">
+			<ul>
+				<li>Horizontal or Vertical options</li>
+				<li>snap to steps</li>
+				<li>apply transitions to the slide</li>
+			</ul>
+		</div>
+		
+		<h3 class="usage">usage</h3>
+		<div id="usage">
+		<pre><code>var slider1 = new Slider('slideContainer1', 'slideHandle1',{
+	onComplete: function(val){$('pos1').setHTML(val);}
+});</code></pre>
+			<h3 class="options">options</h3>
+			<dl>
+				<dt>onChange</dt>
+				<dd>a function to call when the value changes.</dd>
+				<dt>onComplete</dt>
+				<dd>a function to call when you're done dragging.</dd>
+				<dt>onTick</dt>
+				<dd>optionally, you can alter the onTick behavior, for example displaying an effect of the knob moving to the desired position. 
+		Passes as a parameter the new position.</dd>
+				<dt>steps</dt>
+				<dd>the number of steps for your slider.</dd>
+				<dt>mode</dt>
+				<dd>either 'horizontal' or 'vertical'. defaults to horizontal.</dd>
+				<dt>wheel</dt>
+				<dd>experimental! Also use the mouse wheel to control the slider. defaults to false.</dd>
+			</dl>
+		</div>
+		
+		<h3 class="compatibility">browser compatibility</h3>
+		<div id="compatibility">
+			<ul>
+				<li>Firefox 2 (mac / pc)</li>
+				<li>IE 7</li>
+				<li>IE 6</li>
+				<li>Safari (mac)</li>
+			</ul>
+		</div>
+		
+		<h3 class="requirements">requirements</h3>
+		<div id="requirements">
+			<ul>
+				<li><a href="http://www.mootools.net" target="_blank">mootools v1.11</a></li>
+			</ul>
+		</div>
+		
+		<h3 class="downloads">downloads</h3>
+		<div id="downloads">
+			<ul>
+				<li><a href="slider.zip">slider.zip</a></li>
+			</ul>
+		</div>
+		
+		
+	</div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-3333085-1");
+pageTracker._initData();
+pageTracker._trackPageview();
+</script>
+</body>
+</html>

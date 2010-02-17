@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Graph Gear Demo</title>
+<!-- SWFObject embed by Geoff Stearns geoff@deconcept.com http://blog.deconcept.com/swfobject/ -->
+<script type="text/javascript" src="../swfobject/swfobject.js"></script>
+<link rel="stylesheet" type="text/css" href="../examples/example-style.css" />
+
+<script language="JavaScript">
+	var flashMovie;
+	function init() {
+		if (document.getElementById) {
+		   flashMovie = document.getElementById("graphgear");
+		}
+	}
+	window.onload = init;
+
+	function jsSwitchXML() {
+		var xml = document.xmlChooser.xmlChoice.value;
+		flashMovie.switchXML(xml);
+	}
+	
+	function jsLiveXML() {
+		var xml = document.liveXml.liveXmlArea.value;
+		flashMovie.liveXML(xml);
+	}
+	function nodeNotify(str) {
+		document.getElementById("nodify").innerHTML = "<strong>Javascript Events:</strong> Selected Node: " + str;
+	}
+	function addNode() {
+		flashMovie.addNewNode(idN, scaleN, contentN, linkN, textcolorN, imageN, colorN, targetN, labelN, labelColorN);
+	}
+	function addRandomNode() {
+		flashMovie.addRandomNode();
+	}
+</script>
+</head>
+
+<body>
+	<div id="wrap">
+		<h1>Graph Gear <span>A platform for simple, interactive graph generation.</span></h1>
+
+		<form name="xmlChooser" method="POST" action="">
+	 		<strong style="margin-left:5px;">Try it out!</strong> Choose a graph file: 
+			<select name="xmlChoice" onChange="javascript:jsSwitchXML();">
+				<option value="example1/example1.xml">Simple Graph Demo</option>
+				<option value="example2/example2.xml">Some Collaboratives</option>
+				<option value="example3/example3.xml">The Smallest Interesting Graph</option>		
+			</select>
+		</form>
+		
+		<div id="gearspace">
+			<strong>You need to upgrade your Flash Player</strong>
+		</div>
+		<div id="jsactions"><strong>Javascript Actions: </strong><a href="javascript:addRandomNode();">Add a Random Node</a></div>
+		<div id="nodify"><strong>Javascript Events:</strong> (Select a Node to trigger an event)</div>
+		
+		<form name="liveXml" id="liveXml">
+			<span>Live Graph</span>
+			<textarea name="liveXmlArea" rows="6">
+<?xml version="1.0"?>
+<graph title="Sample Graph" bgcolor="ffffff" linecolor="cccccc" viewmode="display" width="725" height="400">
+     <node id="n1" text="Some Text" image="Some Image Link" link="Some Link" scale="100" color="0000ff" textcolor="0000ff"/>
+     <node id="n2" text="Some Text" image="Some Image Link" link="Some Link" scale="100" color="0000ff" textcolor="0000ff"/>
+     <node id="n3" text="Some Text" image="Some Image Link" link="Some Link" scale="100" color="0000ff" textcolor="0000ff"/>
+
+     <edge sourceNode="n1" targetNode="n2" label="Some Label" textcolor="555555"/>
+     <edge sourceNode="n1" targetNode="n3" label="Some Label" textcolor="555555"/>
+</graph>
+			</textarea><br/><a href="javascript:jsLiveXML();">Try it</a>
+		</form>
+		
+		<script type="text/javascript">
+			// <![CDATA[
+		
+			var so = new SWFObject("GraphGear.swf", "graphgear", "725", "400", "8");
+			so.addVariable("graphXMLFile", "example1/example1.xml"); // rename to your xml file
+			so.addParam("allowScriptAccess", "always");
+			so.addParam("scale", "noborder");
+			so.addParam("salign", "tl");
+			so.addParam("base", "../examples");
+			
+				      
+			so.write("gearspace");
+		
+			// ]]>
+		</script>
+
+		<p>What else is there to say? This code is available under the <a href="http://www.gnu.org/copyleft/gpl.html">gpl</a>, so follow those terms. Send back improvements, extensions, and contributions to <a href="mailto:code@creativesynthesis.net">code@creativesynthesis.net</a>. Otherwise start by modifying one of the included example files or building a graph here and saving it as an xml file.
+			<br/><br/>The project site is available at:  <a href="http://www.creativesynthesis.net/blog/projects/graph-gear/">http://www.creativesynthesis.net/blog/projects/graph-gear/</a>
+		</p>
+</div>
+</body>
+</html>

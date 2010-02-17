@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Graph Gear Demo - Example3</title>
+<!-- SWFObject embed by Geoff Stearns geoff@deconcept.com http://blog.deconcept.com/swfobject/ -->
+<script type="text/javascript" src="../swfobject/swfobject.js"></script>
+<link rel="stylesheet" type="text/css" href="example-style.css" />
+
+<script language="JavaScript">
+	var flashMovie;
+	function init() {
+		if (document.getElementById) {
+		   flashMovie = document.getElementById("graphgear");
+		}
+	}
+	function jsLiveXML() {
+		var xml = document.liveXml.liveXmlArea.value;
+		flashMovie.liveXML(xml);
+	}
+	window.onload = init;
+</script>
+</head>
+
+<body>
+	<div id="wrap">
+		<h1> Graph Gear <span>Example 3</span></h1>
+		
+		<div id="gearspace">
+			<strong>You need to upgrade your Flash Player</strong>
+		</div>
+	
+		<form name="liveXml" id="liveXml" style="">
+			<span>Live Graph</span>
+			<textarea name="liveXmlArea" rows="6">
+<?xml version="1.0"?>
+<graph title="The Smallest Interesting Graph" bgcolor="ffffff" width="725" height="400">
+    <node id="n1" text="One Node"/>
+    <node id="n2" text="Two Node" />
+    <edge sourceNode="n1" targetNode="n2" label="connect"/>
+</graph>
+			</textarea><br/><a href="javascript:jsLiveXML();">Try it</a>
+		</form>
+		
+		<script type="text/javascript">
+			// <![CDATA[
+		
+			var so = new SWFObject("../GraphGear.swf", "graphgear", "725", "400", "8");
+			so.addVariable("graphXMLFile", "example3/example3.xml"); // rename to your xml file
+			so.addParam("allowScriptAccess", "always");
+			so.addParam("scale", "noborder");
+			so.addParam("salign", "tl");
+				      
+			so.write("gearspace");
+		
+			// ]]>
+		</script>
+
+		<p>What else is there to say? This code is available under the <a href="http://www.gnu.org/copyleft/gpl.html">gpl</a>, so follow those terms. Send back improvements, extensions, and contributions to <a href="mailto:code@creativesynthesis.net">code@creativesynthesis.net</a>. Otherwise start by modifying one of the included example files or building a graph here and saving it as an xml file.
+			<br/><br/>The project site is available at:  <a href="http://www.creativesynthesis.net/blog/projects/graph-gear/">http://www.creativesynthesis.net/blog/projects/graph-gear/</a>
+		</p>
+</div>
+</body>
+</html>

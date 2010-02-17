@@ -1,0 +1,114 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Graph Gear Demo - Example2</title>
+<!-- SWFObject embed by Geoff Stearns geoff@deconcept.com http://blog.deconcept.com/swfobject/ -->
+<script type="text/javascript" src="../swfobject/swfobject.js"></script>
+<link rel="stylesheet" type="text/css" href="example-style.css" />
+
+
+<link href="collab-browser/slider/slider.css" rel="stylesheet" type="text/css" />
+
+<script type="text/javascript" src="collab-browser/_common/js/mootools.js"></script>
+<script type="text/javascript" src="collab-browser/slider/slider.js"></script>
+
+<script language="JavaScript">
+	var flashMovie;
+	function init() {
+		if (document.getElementById) {
+		   flashMovie = document.getElementById("graphgear");
+		}
+	}
+	function jsLiveXML() {
+		var xml = document.liveXml.liveXmlArea.value;
+		flashMovie.liveXML(xml);
+	}
+	function switchGravity(num) {	
+		flashMovie.changeProperty("GRAVITY", num);
+	}
+	function setSegmentLength(num) {
+		flashMovie.changeProperty("idealSegmentLength", num);
+	}
+	function setBounce(num) {
+		flashMovie.changeProperty("SPRINGK", num);
+	}
+	
+	function nodeNotify(str) {
+		if(str == "n1") {
+			document.getElementById("infospace").innerHTML = "<h1>The Collaborative</h1>A nonprofit research and education institution.</h3>";
+		}
+		else if(str == "n2") {
+			document.getElementById("infospace").innerHTML = "<h2>Matthew Hockenberry</h2>Matthew is the director of the Creative Synthesis Collaborative, a nonprofit research group exploring the role of synthesis in human creativity. He previously served as an affiliate researcher at the Massachusetts Institute of Technology Media Lab where he received his Masters of Science.";
+		}
+		else if(str == "n3") {
+			document.getElementById("infospace").innerHTML = "<h2>Leonardo Bonanni</h2>Leo is a PhD student in the Tangible Media Group at the Media Lab. He has a background in sculpture, architecture and industrial design as well as an MS from the Media Lab. He is interested in augmenting our interaction with the physical environment through innovative HCI, product and material design.";
+			
+		}
+		else if(str == "n4") {
+			document.getElementById("infospace").innerHTML = "<h2>Ernesto Arroyo</h2>Ernesto is a graduate of the MIT Media Lab, were he received his Masters of Science and Ph.D. Ernesto investigates the integration of sensing, reasoning and memory into everyday objects. His research focuses on creating novel interfaces for devices that will assemble contextual knowledge from users, such as behaviors, preferences or environmental information";
+		}
+		else if(str == "n5") {
+			document.getElementById("infospace").innerHTML = "<h2>Connor Dickie</h2>Connor is a scientist, artist and inventor. Connor studied at Queen's University in Canada before coming to MIT's Media Lab. Connor Dickie works as an experientialist designer, producer and scientist who explores the interplay between communication, identity and culture.";
+		}
+		else if(str == "n6") {
+			document.getElementById("infospace").innerHTML = "<h2>Shae Davidson</h2>Shae Davidson is a historian and poet who has served as a researcher and museum director. <a href='http://www.google.com'>He</a> completed a Ph.D. in American History in 2006, and has contributed to projects exploring ecological history, the relationship between politics and society, and industrial history. Shae is currently working on a set of essays examining the connection between history, perceptions of nature, and identity.";
+		}
+		else {
+			document.getElementById("infospace").innerHTML = "<h2>Random Node</h2>Hello new random node friend. You are looking sharp, but what a strange name you have.";
+		}
+	
+	}
+	function addRandomNode() {
+		flashMovie.addRandomNode();
+	}
+	window.onload = init;
+</script>
+</head>
+
+<body >
+	<div id="wrap" style="Width:960px; background:#fff;">
+		<h1> Collaborative Browser <span>Meet some collaboratives!</span></h1>
+		
+		<div id="gearspace" style="float:left;">
+			<strong>You need to upgrade your Flash Player</strong>
+		</div>
+		<div id="infospace" style=" height:280px; font-size:14px; padding:0 10px 10px 10px; font-family:Helvetica, Arial, sans-serif; float:left; width:200px;">
+			<strong><h2>Select a Node</h2>And something will happen.</strong>
+		</div>
+		<div style="clear:both;">
+
+		
+		<script type="text/javascript">
+			// <![CDATA[
+		
+			var so = new SWFObject("../GraphGear.swf", "graphgear", "725", "300", "8");
+			so.addVariable("graphXMLFile", "collab-browser/collab-browser.xml"); // rename to your xml file
+			so.addParam("allowScriptAccess", "always");
+			so.addParam("scale", "noborder");
+			so.addParam("salign", "tl");
+				      
+			so.write("gearspace");
+		
+			// ]]>
+		</script>
+
+		<p>The Collaborative is a small organization, and we are often lonely.<br/><a href="javascript:addRandomNode();">Why don't you add some random friends for us?</a> It would be especially nice if they are colorful.<br/>You can also <a href="javascript:switchGravity(200);">Add Gravity</a> and <a href="javascript:switchGravity(0);">Remove Gravity</a>.
+				<div style="float:left; padding-right:10px; margin-top:7px;">Adjust the Segment Length: </div><div  style="float:left; margin-top:7px;"id="pos1"></div> <div id="slideContainer1" style="margin-top:5px; float:left;width:200px;"><div style="float:left;" id="slideHandle1"></div> </div>
+				<div style="float:left; padding-left:10px;padding-right:10px; margin-top:7px;">Adjust the Spring: </div><div  style="float:left; margin-top:7px;"id="pos2"></div> <div id="slideContainer2" style="margin-top:5px; float:left;width:200px;"><div style="float:left;" id="slideHandle2"></div> </div>
+<div style="clear:both;"></div>		 
+
+			<script type="text/javascript">
+
+				window.addEvent('domready', function(){
+					var slider1 = new Slider('slideContainer1', 'slideHandle1',{onComplete: function(val){$('pos1').setHTML(val); setSegmentLength(val)}, steps: 250});
+
+					var slider2 = new Slider('slideContainer2', 'slideHandle2',{onComplete: function(val){$('pos2').setHTML(val); setBounce(val)}, steps: 100});
+
+				});
+			</script>
+			
+		</p>
+</div>
+</body>
+</html>

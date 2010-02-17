@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<graph title="" bgcolor="000000" linecolor="ffffff" viewmode="display" width="725" height="300" animation="true">
+     <node id="n1" image="example2/co.png" scale="200" color="ffffff" textcolor="ffffff"/>
+     <node id="n2" image="example2/matthewhockenberry.jpg" scale="140" color="cccccc" textcolor="000000"/>
+     <node id="n3" image="example2/leonardobonanni.png"  scale="140" color="cccccc" textcolor="000000"/>
+     <node id="n4" image="example2/ernestoarroyo.jpg" scale="140" color="cccccc" textcolor="000000"/>
+     <node id="n5" image="example2/connordickie.jpg" scale="140" color="cccccc" textcolor="000000"/>
+     <node id="n6" image="example2/shaedavidson.jpg" scale="140" color="cccccc" textcolor="000000"/>
+
+     <edge sourceNode="n1" targetNode="n2" label="" textcolor="555555"/>
+     <edge sourceNode="n1" targetNode="n3" label="" textcolor="555555"/>
+     <edge sourceNode="n1" targetNode="n4" label="" textcolor="555555"/>
+     <edge sourceNode="n1" targetNode="n5" label="" textcolor="555555"/>
+     <edge sourceNode="n1" targetNode="n6" label="" textcolor="555555"/>
+</graph>

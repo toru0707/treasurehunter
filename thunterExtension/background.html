@@ -6,7 +6,7 @@ chrome.self.onConnect.addListener(function(port, name) {
     port.onMessage.addListener(function(info, con) {
 		console.log('background onMessage is called.');
         $.ajax({
-		  url: "http://127.0.0.1/",
+		  url: "http://localhost/",
 		  cache: false,
 		  success: function(html){
 		    con.postMessage(html);

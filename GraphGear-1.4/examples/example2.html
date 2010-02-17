@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Graph Gear Demo - Example2</title>
+<!-- SWFObject embed by Geoff Stearns geoff@deconcept.com http://blog.deconcept.com/swfobject/ -->
+<script type="text/javascript" src="../swfobject/swfobject.js"></script>
+<link rel="stylesheet" type="text/css" href="example-style.css" />
+
+<script language="JavaScript">
+	var flashMovie;
+	function init() {
+		if (document.getElementById) {
+		   flashMovie = document.getElementById("graphgear");
+		}
+	}
+	function jsLiveXML() {
+		var xml = document.liveXml.liveXmlArea.value;
+		flashMovie.liveXML(xml);
+	}
+	window.onload = init;
+</script>
+</head>
+
+<body>
+	<div id="wrap">
+		<h1> Graph Gear <span>Example 2</span></h1>
+		
+		<div id="gearspace">
+			<strong>You need to upgrade your Flash Player</strong>
+		</div>
+	
+		<form name="liveXml" id="liveXml" style="">
+			<span>Live Graph</span>
+			<textarea name="liveXmlArea" rows="6">
+<?xml version="1.0"?>
+<graph title="Some Collaboratives" bgcolor="ffffff" linecolor="cccccc" viewmode="display" width="725" height="400">
+     <node id="n1" text="The Collaborative" image="example2/co.png" link="http://www.creativesynthesis.net" scale="200" color="ff0000" textcolor="ffffff"/>
+     <node id="n2" text="Matthew Hockenberry" image="example2/matthewhockenberry.jpg" link="http://www.creativesynthesis.net/zeitgeist/1/" scale="140" color="cccccc" textcolor="000000"/>
+     <node id="n3" text="Leonardo Bonanni" image="example2/leonardobonanni.png" link="http://www.creativesynthesis.net/zeitgeist/2/" scale="140" color="cccccc" textcolor="000000"/>
+     <node id="n4" text="Ernesto Arroyo" image="example2/ernestoarroyo.jpg" link="http://www.creativesynthesis.net/zeitgeist/4/" scale="140" color="cccccc" textcolor="000000"/>
+     <node id="n5" text="Connor Dickie" image="example2/connordickie.jpg" link="http://www.creativesynthesis.net/zeitgeist/3/" scale="140" color="cccccc" textcolor="000000"/>
+     <node id="n6" text="Shae Davidson" image="example2/shaedavidson.jpg" link="http://www.creativesynthesis.net/zeitgeist/5/" scale="140" color="cccccc" textcolor="000000"/>
+
+     <edge sourceNode="n1" targetNode="n2" label="" textcolor="555555"/>
+     <edge sourceNode="n1" targetNode="n3" label="" textcolor="555555"/>
+     <edge sourceNode="n1" targetNode="n4" label="" textcolor="555555"/>
+     <edge sourceNode="n1" targetNode="n5" label="" textcolor="555555"/>
+     <edge sourceNode="n1" targetNode="n6" label="" textcolor="555555"/>
+</graph>
+			</textarea><br/><a href="javascript:jsLiveXML();">Try it</a>
+		</form>
+		
+		<script type="text/javascript">
+			// <![CDATA[
+		
+			var so = new SWFObject("../GraphGear.swf", "graphgear", "725", "400", "8");
+			so.addVariable("graphXMLFile", "example2/example2.xml"); // rename to your xml file
+			so.addParam("allowScriptAccess", "always");
+			so.addParam("scale", "noborder");
+			so.addParam("salign", "tl");
+				      
+			so.write("gearspace");
+		
+			// ]]>
+		</script>
+
+		<p>What else is there to say? This code is available under the <a href="http://www.gnu.org/copyleft/gpl.html">gpl</a>, so follow those terms. Send back improvements, extensions, and contributions to <a href="mailto:code@creativesynthesis.net">code@creativesynthesis.net</a>. Otherwise start by modifying one of the included example files or building a graph here and saving it as an xml file.
+			<br/><br/>The project site is available at:  <a href="http://www.creativesynthesis.net/blog/projects/graph-gear/">http://www.creativesynthesis.net/blog/projects/graph-gear/</a>
+		</p>
+</div>
+</body>
+</html>

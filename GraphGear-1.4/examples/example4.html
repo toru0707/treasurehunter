@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Graph Gear Demo - Example4</title>
+<!-- SWFObject embed by Geoff Stearns geoff@deconcept.com http://blog.deconcept.com/swfobject/ -->
+<script type="text/javascript" src="../swfobject/swfobject.js"></script>
+<link rel="stylesheet" type="text/css" href="example-style.css" />
+
+<script language="JavaScript">
+	var flashMovie;
+	function init() {
+		if (document.getElementById) {
+		   flashMovie = document.getElementById("graphgear");
+		}
+	}
+	function jsLiveXML() {
+		var xml = document.liveXml.liveXmlArea.value;
+		flashMovie.liveXML(xml);
+	}
+	window.onload = init;
+</script>
+</head>
+
+<body>
+	<div id="wrap">
+		<h1> Graph Gear <span>Example 4</span></h1>
+		
+		<div id="gearspace">
+			<strong>You need to upgrade your Flash Player</strong>
+		</div>
+	
+		<form name="liveXml" id="liveXml" style="">
+			<span>Live Graph</span>
+			<textarea name="liveXmlArea" rows="6">
+<?xml version="1.0"?>
+<graph title="Gooey Graph Demo" bgcolor="ffffff" linecolor="cccccc" viewmode="display" width="725" height="400" segmentlength="75" mass="20" gravity="50" bounce="20" springforce="10" repelforce="10" resistance="10">
+     <node id="n1" text="Creative Synthesis" image="example1/co.png" link="http://www.creativesynthesis.net" scale="120" color="0000ff" textcolor="0000ff"/>
+     <node id="n2" text="Recycled Research" image="example1/co.png" color="cccccc" textcolor="000000"/>
+     <node id="n3" text="Graph Gear" image="example1/co.png" scale="140" color="0000ff" textcolor="000000"/>
+     <node id="n4" text="Personal Zeitgeist" image="example1/co.png" color="cccccc" textcolor="000000"/>
+     <node id="n5" text="Recycled Canvas" image="example1/co.png" color="cccccc" textcolor="000000"/>
+     <node id="n6" text="Research Art Science" image="example1/co.png" color="cccccc" textcolor="000000"/>
+     <node id="n7" text="Design Graph" image="example1/co.png" color="0000ff" textcolor="000000"/>
+
+     <edge sourceNode="n1" targetNode="n2" label="" textcolor="555555"/>
+     <edge sourceNode="n1" targetNode="n3" label="" textcolor="555555"/>
+     <edge sourceNode="n1" targetNode="n4" label="" textcolor="555555"/>
+     <edge sourceNode="n1" targetNode="n5" label="" textcolor="555555"/>
+     <edge sourceNode="n2" targetNode="n6" label="" textcolor="555555"/>
+     <edge sourceNode="n2" targetNode="n7" label="" textcolor="555555"/>
+</graph>
+			</textarea><br/><a href="javascript:jsLiveXML();">Try it</a>
+		</form>
+		
+		<script type="text/javascript">
+			// <![CDATA[
+		
+			var so = new SWFObject("../GraphGear.swf", "graphgear", "725", "400", "8");
+			so.addVariable("graphXMLFile", "example4/example4.xml"); // rename to your xml file
+			so.addParam("allowScriptAccess", "always");
+			so.addParam("scale", "noborder");
+			so.addParam("salign", "tl");
+				      
+			so.write("gearspace");
+		
+			// ]]>
+		</script>
+
+		<p>This example shows the use of some unusual properties of the graph to create a very gooey feeling graph. Normally we recommend not changing these - the default values are pretty good. However, you are welcome to add the following tags to the graph xml file to change the actual force directed layout. These are (with defaults in parentheses): segmentlength (75), mass (2), gravity (0), bounce (.9), springforce (10), repelforce (10), resistance (10). Here we have altered the gravity, mass and bounce. Segmentlength is another good thing to modify.</p> <p>What else is there to say? This code is available under the <a href="http://www.gnu.org/copyleft/gpl.html">gpl</a>, so follow those terms. Send back improvements, extensions, and contributions to <a href="mailto:code@creativesynthesis.net">code@creativesynthesis.net</a>. Otherwise start by modifying one of the included example files or building a graph here and saving it as an xml file.
+			<br/><br/>The project site is available at:  <a href="http://www.creativesynthesis.net/blog/projects/graph-gear/">http://www.creativesynthesis.net/blog/projects/graph-gear/</a>
+		</p>
+</div>
+</body>
+</html>

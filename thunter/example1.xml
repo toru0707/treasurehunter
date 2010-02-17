@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<graph title="Simple Graph Demo" bgcolor="ffffff" linecolor="cccccc" viewmode="display" width="725" height="400">
+<node id="1" text="フランス語" scale="200.0" color="cccccc" textcolor="000000"/>
+<node id="2" text="英語" scale="200.0" color="cccccc" textcolor="000000"/>
+<node id="3" text="大会" scale="200.0" color="cccccc" textcolor="000000"/>
+<node id="4" text="1" scale="200.0" color="cccccc" textcolor="000000"/>
+<node id="5" text="事" scale="200.0" color="cccccc" textcolor="000000"/>
+<node id="6" text="場合" scale="200.0" color="cccccc" textcolor="000000"/>
+<node id="7" text="オリンピック" scale="200.0" color="cccccc" textcolor="000000"/>
+<node id="8" text="開催" scale="200.0" color="cccccc" textcolor="000000"/>
+<node id="9" text="公用語" scale="200.0" color="cccccc" textcolor="000000"/>
+<edge sourceNode="6" targetNode="2" label="" textcolor="555555"/>
+<edge sourceNode="1" targetNode="6" label="" textcolor="555555"/>
+<edge sourceNode="4" targetNode="3" label="" textcolor="555555"/>
+<edge sourceNode="9" targetNode="2" label="" textcolor="555555"/>
+<edge sourceNode="5" targetNode="9" label="" textcolor="555555"/>
+<edge sourceNode="1" targetNode="5" label="" textcolor="555555"/>
+<edge sourceNode="7" targetNode="8" label="" textcolor="555555"/>
+<edge sourceNode="9" targetNode="6" label="" textcolor="555555"/>
+<edge sourceNode="5" targetNode="2" label="" textcolor="555555"/>
+<edge sourceNode="1" targetNode="9" label="" textcolor="555555"/>
+<edge sourceNode="5" targetNode="6" label="" textcolor="555555"/>
+<edge sourceNode="1" targetNode="2" label="" textcolor="555555"/>

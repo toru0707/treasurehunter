@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Graph Gear - Graph XML Files</title>
+
+<link rel="stylesheet" type="text/css" href="../examples/example-style.css" />
+
+
+</head>
+
+<body>
+<div id="wrap">
+	<h1>Graph Gear XML Files <span>Vague Specification.</span></h1>
+	
+<p>Every graph is defined with a little xml file. Here we'll walk you through what can be in the file. Most of the values are optional. The only required values are: the graph title, the graph bgcolor, the node id, the node text, the edge to and from nodes, and the edge label. See the example "The Smallest Interesting Graph" for the bare minimum.</p>
+
+<p>We start out with the general <code>&lt;graph&gt;</code> tag.
+They usually look something like this:</p>
+
+<code>&lt;graph title="Some Collaboratives" bgcolor="ffffff" linecolor="cccccc" viewmode="explore" width="600" height="300"&gt;</code>
+<ul>
+<li><strong>title</strong> - The title is what you might imagine it to be, the name that will appear for your graph on the widget.</li>
+<li><strong>type</strong> - The style of the graph, either directed or undirected. Directed graphs show indications of connection direction - defaults to undirected.</li>
+<li><strong>bgcolor</strong> - The background color (expressed as a hexadecimal, like most web colors) for the whole graph.</li>
+<li><strong>linecolor</strong> - The color for all of the lines connecting nodes on the graph.</li>
+<li><strong>viewmode</strong> - There two view modes right now. The 'explore' mode, which only shows the closest nodes and displays nodes as you navigate and the 'display' mode, which shows everything. The explore mode is nice for very large graphs and display mode is the default.</li>
+<li><strong>width,height</strong> - These properties (as you might imagine) set the width ad height of the graph. They default to 725x200px. If you use these you'll want to make sure that the corresponding swfobject sizes are set to the same value.</li>
+<li><strong>animation</strong> - Either true or false, enables support for VisualCondition's Twease animation library, with currently limited effects - default to false.</li>
+<li><strong>hidelabel</strong> - Either true or false, sets labels to hide unless the user mouses over them (note: nodes without text values are set to hide labels by default - and don't show anything on mouseover) - default to false.</li>
+<li><strong>lock</strong> - Either x or y, this locks the force direction to a particular axis (fairly unsupported right now).</li>
+<li><strong>action</strong> - Either drag or center, this sets the user interaction style for the graph - defaults to drag (fairly unsupported right now).</li>
+</ul>
+
+<p>The next interesting part of the file are the individuals nodes that actually make up your graph. A typical one probably looks something like this:</p>
+
+<code>&lt;node id="n1" text="The Collaborative" image="somecollabs/co.png" link="http://www.creativesynthesis.net" scale="200" color="ff0000" textcolor="ffffff"/&gt;</code>
+
+<ul>
+<li><strong>id</strong> - A reference id (hopefully unique) for each node in the graph. You'll need this when you link nodes.</li>
+<li><strong>type</strong> - This is the style of node you want to appear, appropriate values are: CircleNode, SquareNode, CircleTextNode (A circle node with simplified label) and OpenNode (an unmasked node intended for use with transparent png backgrounds) - defaults to CircleNode.</li>
+<li><strong>text</strong> - The text that appears on the tags for nodes. This is the 'node content'.</li>
+<li><strong>image</strong> - If you'd like, you can load an image for each node in the graph. This takes a little bit of bandwidth, so be careful. This is either a local reference (as in the example) or a fully resolved url.</li>
+<li><strong>link</strong> - This is the full resolved url or relative reference to something you want the text to link to.</li>
+<li><strong>scale</strong> - This is the size of the node, expressed as a percentage. The default node scale is 100, for a 40x40px node. A value of 200 would produce an 80x80px node, for example.</li>
+<li><strong>color</strong> - The color for the node, please note that if you use an image in the node only the border and text tag will be colored.</li>
+<li><strong>textcolor</strong> - This is the color of the text in the text tag. Good values are often something like ffffff (white), 000000 (black) or something like that.</li>
+<li><strong>cluster</strong> - This is the cluster that the node belongs to, if you have multiple independent graphs on one graphgear. This defaults to "default".</li>
+
+</ul>
+
+<p>The last important item of a graph file is the actual description of the connections between nodes. Free floating nodes don't tend to do so well. It's also worth noting that the graphs currently don't have any concept of direction (at least in rendering). So at this point it is good enough to specify only one direction (for example, that node1 connects to node2, without defining that node2 connects to node1). These look something like this:</p>
+<code>&lt;edge sourceNode="n1" targetNode="n2" label="A label!" textcolor="555555"/&gt;</code>
+
+<ul>
+	<li><strong>sourceNode</strong> - Theoretically the node the connection is coming from.</li>
+<li><strong>targetNode</strong> - Theoretically the node the connection is going to.</li>
+<li><strong>label</strong> - A textual label that appears on the line the connection makes.</li>
+<li><strong>textcolor</strong> - The color for text on the (above mention) label.</li>
+</ul>
+
+That's it for now.
+
+</div>
+</body>
+</html>

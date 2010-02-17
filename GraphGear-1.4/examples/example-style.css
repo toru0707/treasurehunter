@@ -1,0 +1,30 @@
+div#wrap {
+	width:725px; 
+	padding:0 10px 0 10px; 
+	margin:0 auto;
+}
+
+div#wrap h1 {
+	font-size:40px; 
+	font-family:Helvetica; 
+	text-align:left;
+}
+
+div#wrap h1 span {
+	font-size:16px;
+}
+
+form#liveXml {
+	margin:10px 0 10px 0; 
+	border:1px solid #eee; 
+	background:#fbfbfb; 
+	padding:5px; 
+	width:713px;
+	font-family:Helvetica; 
+	font-size:12px;
+}
+
+form#liveXml textarea {
+	width:712px; 
+	margin-bottom:5px;
+}

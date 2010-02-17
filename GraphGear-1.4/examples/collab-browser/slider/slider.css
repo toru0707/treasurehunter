@@ -1,0 +1,32 @@
+
+
+/**************************************************************
+
+	Slider
+	v 1.0
+
+**************************************************************/
+
+#slideContainer1, #slideContainer2 {
+	border: 1px solid #ccc;
+	height: 20px;
+	background:#f5f5f5;
+}
+
+#slideHandle1, #slideHandle2 {
+	background-color: #ccc;
+	width: 10px;
+	height: 20px;
+	cursor: pointer;
+}
+
+
+
+#pos1, #pos2 {
+	height: 20px;
+	width: 30px;
+	margin-top: 5px;
+	padding-left: 2px;
+}
+
+/*************************************************************/
